@@ -4,7 +4,7 @@
   "nodes": [
     {
       "name": "backup-server",
-      "template": "ubuntu16",
+      "template": "mubuntui",
       "peer_group": "HTTP-GROUP",
       "size": "MEDIUM"
     },
