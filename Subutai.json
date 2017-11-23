@@ -3,7 +3,7 @@
   "description": "Environment configuration test blueprint",
   "nodes": [
     {
-      "name": "backup-server",
+      "name": "backup-serverAnton",
       "template": "ubuntu16",
       "peer_group": "HTTP-GROUP",
       "size": "MEDIUM"
