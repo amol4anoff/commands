@@ -4,13 +4,13 @@
   "nodes": [
     {
       "name": "backup-serverAnton",
-      "template": "ansible",
+      "template": "ubuntu14",
       "peer_group": "HTTP-GROUP",
       "size": "MEDIUM"
     },
     {
       "name": "ubuntu16-server",
-      "template": "ansible",
+      "template": "ubuntu14",
       "peer_group": "HTTP-GROUP",
       "size": "SMALL"
     }
