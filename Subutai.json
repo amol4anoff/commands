@@ -29,7 +29,7 @@
       }
     }
   ],
-  "sshKey": "ztimur",
+  "sshKey": "amolchanov",
   "configuration": {
     "playbook": "https://github.com/platium/commands/archive/master.zip",
     "script": "main1.yml",
