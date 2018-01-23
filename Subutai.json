@@ -1,52 +1,37 @@
 {
-  "name": "${environmentName}",
+  "name": "SubutaiBlueprint",
   "description": "Environment configuration test blueprint",
-  "nodes": [
+  "containers": [
     {
-      "name": "backup-serverAnton",
-      "template": "ubuntu14",
-      "peer_group": "HTTP-GROUP",
+      "hostname": "backup-server",
+      "template": "ubuntu16",
+      "peer-criteria": "HTTP-GROUP",
       "size": "MEDIUM"
-    },
-    {
-      "name": "ubuntu16-server",
-      "template": "ubuntu14",
-      "peer_group": "HTTP-GROUP",
-      "size": "SMALL"
     }
   ],
-  "peerGroups": [
+  "peer-criteria": [
     {
       "name": "HTTP-GROUP",
-      "pricingPref": {
-        "maxPrice": "${maxPrice}"
-      }
-    },
-    {
-      "name": "CONFIG-GROUP",
-      "pricingPref": {
-        "maxPrice": "${maxPrice}"
-      }
+      "max-price": "50"
     }
   ],
-  "sshKey": "amolchanov",
   "configuration": {
-    "playbook": "https://github.com/platium/commands/archive/master.zip",
-    "script": "main1.yml",
+    "source-url": "https://github.com/platium/commands/archive/master.zip",
+    "ansible-playbook": "main.yml",
+    "arguments": [
+      {
+ "key": "key1",
+        "value": "value1"
+      }
+    ],
     "groups": [
       {
-        "name": "db",
-        "nodes_name": [
-          "backup-server"
-        ]
-      },
-      {
-        "name": "app",
-        "nodes_name": [
-          "ubuntu16-server",
+        "name": "backup",
+        "hostnames": [
           "backup-server"
         ]
       }
     ]
   }
 }
+
