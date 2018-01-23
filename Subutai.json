@@ -1,37 +1,37 @@
-{
-  "name": "SubutaiBlueprint",
-  "description": "Environment configuration test blueprint",
-  "containers": [
-    {
-      "hostname": "backup-server",
-      "template": "ubuntu16",
-      "peer-criteria": "HTTP-GROUP",
-      "size": "MEDIUM"
-    }
-  ],
-  "peer-criteria": [
-    {
-      "name": "HTTP-GROUP",
-      "max-price": "50"
-    }
-  ],
-  "configuration": {
-    "source-url": "https://github.com/platium/commands/archive/master.zip",
-    "ansible-playbook": "main.yml",
-    "arguments": [
-      {
- "key": "key1",
-        "value": "value1"
+{  
+   "name":"SubutaiBlueprint",
+   "description":"Environment configuration test blueprint",
+   "containers":[  
+      {  
+         "hostname":"backup-server",
+         "template":"ubuntu16",
+         "peer-criteria":"HTTP-GROUP",
+         "size":"MEDIUM"
       }
-    ],
-    "groups": [
-      {
-        "name": "backup",
-        "hostnames": [
-          "backup-server"
-        ]
+   ],
+   "peer-criteria":[  
+      {  
+         "name":"HTTP-GROUP",
+         "max-price":"50"
       }
-    ]
-  }
+   ],
+   "configuration":{  
+      "source-url":"https://github.com/platium/commands/archive/master.zip",
+      "ansible-playbook":"main.yml",
+      "arguments":[  
+         {  
+            "key":"key1",
+            "value":"value1"
+         }
+      ],
+      "groups":[  
+         {  
+            "name":"backup",
+            "hostnames":[  
+               "backup-server"
+            ]
+         }
+      ]
+   }
 }
 
