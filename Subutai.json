@@ -15,6 +15,14 @@
          "max-price":"50"
       }
    ],
+   "user-variables": {
+        "environmentName": {
+            "description": "Enter the environment name",
+            "type": "string",
+            "default": "wp",
+            "validation": "[a-zA-Z0-9]+"
+        },
+
    "configuration":{  
       "source-url":"https://github.com/platium/commands/archive/master.zip",
       "ansible-playbook":"main.yml",
